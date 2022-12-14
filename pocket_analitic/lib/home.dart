@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
+import 'package:pocket_analitic/theme/custom_colors.dart';
+import 'package:pocket_analitic/view/home_page_widgets/home_manu_buttons.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,22 +12,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+      backgroundColor: CustomColors.bg,
       // appBar: AppBar(
       //   title: Text(widget.title),
       // ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            MenuButton(
-              title: 'Make a choise',
-            ),
-            MenuButton(
-              title: 'Create Arguments',
-            ),
-          ],
-        ),
+        child: HomeMenuButtons(),
       ),
     );
   }
