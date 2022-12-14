@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
 
 class CreateArgumentsPage extends StatefulWidget {
@@ -16,10 +17,23 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: MenuButton(
-          title: 'Save',
-          callback: _saveCallback,
+      backgroundColor: CustomColors.bg,
+      appBar: AppBar(
+        backgroundColor: CustomColors.greenGold,
+        title: const Center(child: Text('Create arguments')),
+      ),
+      body: SafeArea(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              MenuButton(
+                title: 'Save',
+                callback: _saveCallback,
+              ),
+            ],
+          ),
         ),
       ),
     );

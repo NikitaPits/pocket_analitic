@@ -12,13 +12,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: CustomColors.bg,
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
-      body: Center(
-        child: HomeMenuButtons(),
+      appBar: AppBar(
+        backgroundColor: CustomColors.greenGold,
+        title: const Center(child: Text('Main Page')),
+      ),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Center(
+              child: HomeMenuButtons(),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -10,12 +10,12 @@ class HomeMenuButtons extends StatefulWidget {
 }
 
 class _HomeMenuButtonsState extends State<HomeMenuButtons> {
-  void _makeChoiseCallback() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CreateArgumentsPage()));
-  }
+  void _makeChoiseCallback() {}
 
-  void _createArgumentsCallback() {}
+  void _createArgumentsCallback() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const CreateArgumentsPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +23,12 @@ class _HomeMenuButtonsState extends State<HomeMenuButtons> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         MenuButton(
-          title: 'Make a choise',
-          callback: _makeChoiseCallback,
-        ),
-        MenuButton(
           title: 'Create Arguments',
           callback: _createArgumentsCallback,
+        ),
+        MenuButton(
+          title: 'Make a choise',
+          callback: _makeChoiseCallback,
         ),
       ],
     );
