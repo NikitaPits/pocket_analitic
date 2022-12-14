@@ -9,9 +9,8 @@ class HomeMenuButtons extends StatefulWidget {
 }
 
 class _HomeMenuButtonsState extends State<HomeMenuButtons> {
-  void _callback() {
-    print('clicked');
-  }
+  void _makeChoiseCallback() {}
+  void _createArgumentsCallback() {}
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,11 @@ class _HomeMenuButtonsState extends State<HomeMenuButtons> {
       children: [
         MenuButton(
           title: 'Make a choise',
-          callback: _callback,
+          callback: _makeChoiseCallback,
         ),
         MenuButton(
           title: 'Create Arguments',
-          callback: _callback,
+          callback: _createArgumentsCallback,
         ),
       ],
     );
