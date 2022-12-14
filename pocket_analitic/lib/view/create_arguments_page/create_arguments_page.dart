@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
 
 class CreateArgumentsPage extends StatefulWidget {
   const CreateArgumentsPage({super.key});
@@ -8,13 +9,19 @@ class CreateArgumentsPage extends StatefulWidget {
 }
 
 class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
+  _saveCallback() {
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
-      body: Container(),
+      body: Center(
+        child: MenuButton(
+          title: 'Save',
+          callback: _saveCallback,
+        ),
+      ),
     );
   }
 }
