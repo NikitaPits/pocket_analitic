@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CreateArgumentsPage extends StatefulWidget {
-  const CreateArgumentsPage({super.key});
+class MenuButton extends StatefulWidget {
+  final String title;
+  const MenuButton({super.key, required this.title});
 
   @override
-  State<CreateArgumentsPage> createState() => _CreateArgumentsPageState();
+  State<MenuButton> createState() => _MenuButtonState();
 }
 
-class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
+class _MenuButtonState extends State<MenuButton> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return TextButton(
+      onPressed: () => print('I am clicked'),
+      child: Text(widget.title),
+    );
   }
 }

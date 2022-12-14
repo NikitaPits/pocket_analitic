@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,7 +15,19 @@ class _HomeState extends State<Home> {
       // appBar: AppBar(
       //   title: Text(widget.title),
       // ),
-      body: Container(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            MenuButton(
+              title: 'Make a choise',
+            ),
+            MenuButton(
+              title: 'Create Arguments',
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
