@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: CustomColors.bg,
       appBar: AppBar(
-        backgroundColor: CustomColors.greenGold,
+        backgroundColor: CustomColors.uiTheme,
         title: const Center(child: Text('Main Page')),
       ),
       body: Container(

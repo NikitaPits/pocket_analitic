@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 class CustomColors {
-  static const Color bg = Color.fromARGB(255, 76, 96, 185);
-  static const Color greenGold = Color.fromARGB(255, 23, 92, 156);
+  static const Color bg = Color.fromARGB(255, 179, 190, 238);
+  static const Color uiTheme = Color.fromARGB(255, 103, 165, 223);
   static const Color vivaMagenta = Color(0xFFBB2649);
-  static const Color greenGoldDark = Color.fromARGB(255, 18, 113, 151);
+  static const Color contures = Color.fromARGB(255, 178, 207, 219);
 }

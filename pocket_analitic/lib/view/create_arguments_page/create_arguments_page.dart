@@ -19,7 +19,7 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
     return Scaffold(
       backgroundColor: CustomColors.bg,
       appBar: AppBar(
-        backgroundColor: CustomColors.greenGold,
+        backgroundColor: CustomColors.uiTheme,
         title: const Center(child: Text('Create arguments')),
       ),
       body: SafeArea(

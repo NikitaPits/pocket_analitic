@@ -19,11 +19,11 @@ class _MenuButtonState extends State<MenuButton> {
         height: 50,
         margin: const EdgeInsets.only(bottom: 8),
         decoration: BoxDecoration(
-          color: CustomColors.greenGold,
+          color: CustomColors.uiTheme,
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           border: Border.all(
             width: 1,
-            color: CustomColors.greenGoldDark,
+            color: CustomColors.contures,
           ),
         ),
         child: Center(
