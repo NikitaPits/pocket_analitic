@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
+import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/view/home_page_widgets/home_manu_buttons.dart';
 
 class Home extends StatefulWidget {
@@ -16,12 +17,16 @@ class _HomeState extends State<Home> {
       backgroundColor: CustomColors.bg,
       appBar: AppBar(
         backgroundColor: CustomColors.uiTheme,
-        title: const Center(child: Text('Main Page')),
+        title: Center(
+            child: Text(
+          'Pocket Analitic',
+          style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg),
+        )),
       ),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: const [
             Center(
               child: HomeMenuButtons(),

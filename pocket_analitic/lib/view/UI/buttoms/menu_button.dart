@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
+import 'package:pocket_analitic/theme/custom_fonts.dart';
 
 class MenuButton extends StatefulWidget {
   final String title;
@@ -23,17 +24,12 @@ class _MenuButtonState extends State<MenuButton> {
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           border: Border.all(
             width: 1,
-            color: CustomColors.contures,
+            color: CustomColors.bg,
           ),
         ),
         child: Center(
-          child: Text(
-            widget.title,
-            style: const TextStyle(
-              fontSize: 17,
-              color: Colors.white,
-            ),
-          ),
+          child: Text(widget.title,
+              style: CustomTextStyle.headlineSemiBold16(c: CustomColors.white)),
         ),
       ),
     );
