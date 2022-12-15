@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
@@ -34,12 +33,11 @@ class _ResultsPageState extends State<ResultsPage> {
                 icon: 'assets/icons/back-arrow.svg'),
             Text('Results',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
-            SvgPicture.asset(
-              'assets/icons/icons8-info-100.svg',
-              color: CustomColors.bg,
-              height: 35,
-              width: 35,
-            ),
+            CustomIconButton(
+                callback: () {
+                  Navigator.pop(context);
+                },
+                icon: 'assets/icons/icons8-info-50.svg'),
           ],
         ),
       ),

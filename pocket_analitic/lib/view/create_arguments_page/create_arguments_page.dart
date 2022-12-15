@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
+import 'package:pocket_analitic/theme/custom_fonts.dart';
+import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
 
 class CreateArgumentsPage extends StatefulWidget {
@@ -19,8 +21,25 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
     return Scaffold(
       backgroundColor: CustomColors.bg,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: CustomColors.uiTheme,
-        title: const Center(child: Text('Create arguments')),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomIconButton(
+                callback: () {
+                  Navigator.pop(context);
+                },
+                icon: 'assets/icons/back-arrow.svg'),
+            Text('Creaate Arguments',
+                style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
+            CustomIconButton(
+                callback: () {
+                  Navigator.pop(context);
+                },
+                icon: 'assets/icons/icons8-info-50.svg'),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Container(

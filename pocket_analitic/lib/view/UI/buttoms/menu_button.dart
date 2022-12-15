@@ -24,12 +24,12 @@ class _MenuButtonState extends State<MenuButton> {
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           border: Border.all(
             width: 1,
-            color: CustomColors.bg,
+            color: CustomColors.contures,
           ),
         ),
         child: Center(
           child: Text(widget.title,
-              style: CustomTextStyle.headlineSemiBold16(c: CustomColors.white)),
+              style: CustomTextStyle.title2ExtraBold20(c: CustomColors.bg)),
         ),
       ),
     );
