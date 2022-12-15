@@ -29,17 +29,17 @@ class _ChoiserPageState extends State<ChoiserPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomIconButton(
-                callback: () {
-                  Navigator.pop(context);
-                },
-                icon: 'assets/icons/back-arrow.svg'),
+              callback: () {
+                Navigator.pop(context);
+              },
+              icon: 'assets/icons/back-arrow.svg',
+            ),
             Text('Lets Calculate',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
             CustomIconButton(
-                callback: () {
-                  Navigator.pop(context);
-                },
-                icon: 'assets/icons/icons8-info-50.svg'),
+              callback: () {},
+              icon: 'assets/icons/icons8-info-50.svg',
+            ),
           ],
         ),
       ),

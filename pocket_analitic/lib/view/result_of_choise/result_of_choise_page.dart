@@ -27,17 +27,17 @@ class _ResultsPageState extends State<ResultsPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomIconButton(
-                callback: () {
-                  Navigator.pop(context);
-                },
-                icon: 'assets/icons/back-arrow.svg'),
+              callback: () {
+                Navigator.pop(context);
+              },
+              icon: 'assets/icons/back-arrow.svg',
+            ),
             Text('Results',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
             CustomIconButton(
-                callback: () {
-                  Navigator.pop(context);
-                },
-                icon: 'assets/icons/icons8-info-50.svg'),
+              callback: () {},
+              icon: 'assets/icons/icons8-info-50.svg',
+            ),
           ],
         ),
       ),
