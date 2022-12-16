@@ -21,11 +21,15 @@ class _HomeState extends State<Home> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Pocket Analitic',
-              style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg),
+            const SizedBox(
+              width: 30,
             ),
-            const Spacer(),
+            Center(
+              child: Text(
+                'Pocket Analitic',
+                style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg),
+              ),
+            ),
             CustomIconButton(
               callback: () {},
               icon: 'assets/icons/icons8-info-50.svg',
@@ -36,13 +40,23 @@ class _HomeState extends State<Home> {
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
         child: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
+          padding: const EdgeInsets.only(top: 20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Welcome to "Pocket Analitic"',
-                  style:
-                      CustomTextStyle.title1Bold24(c: CustomColors.mainText)),
+              Column(
+                children: [
+                  Text('Welcome!',
+                      style: CustomTextStyle.title1Bold24(
+                          c: CustomColors.mainText)),
+                  Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                    textAlign: TextAlign.justify,
+                    style: CustomTextStyle.caption1Regular13(
+                        c: CustomColors.mainText),
+                  ),
+                ],
+              ),
               Container(
                 height: 300,
                 width: 300,

@@ -19,7 +19,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
       onTap: () => widget.callback(),
       child: SvgPicture.asset(
         widget.icon,
-        color: CustomColors.bg,
+        color: CustomColors.mainText,
         height: 30,
         width: 30,
       ),

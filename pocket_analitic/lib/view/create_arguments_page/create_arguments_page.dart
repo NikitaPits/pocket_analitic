@@ -45,6 +45,7 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MenuButton(
