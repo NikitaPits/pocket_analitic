@@ -16,6 +16,13 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
     Navigator.pop(context);
   }
 
+  late String _createdArgumentName;
+  @override
+  void initState() {
+    _createdArgumentName = '';
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,11 +50,42 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
       ),
       body: SafeArea(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 15),
+          margin: const EdgeInsets.all(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: TextField(
+                      onChanged: (value) {
+                        setState(() {
+                          _createdArgumentName = value;
+                        });
+                      },
+                      style: CustomTextStyle.headlineMedium16(
+                        c: CustomColors.mainText,
+                      ),
+                      cursorColor: CustomColors.uiTheme,
+                      decoration: InputDecoration(
+                        hintText: 'Enter an argument name',
+                        hintStyle: CustomTextStyle.headlineMedium16(
+                          c: CustomColors.hintText,
+                        ),
+                        focusedBorder: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: CustomColors.uiTheme, width: 2),
+                        ),
+                      ),
+                    ),
+                  ),
+                  CustomIconButton(
+                      icon: 'assets/icons/plus.svg', callback: () {})
+                ],
+              ),
               MenuButton(
                 title: 'Save',
                 callback: _saveCallback,
