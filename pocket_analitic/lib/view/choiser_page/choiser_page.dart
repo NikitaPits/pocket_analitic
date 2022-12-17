@@ -50,11 +50,21 @@ class _ChoiserPageState extends State<ChoiserPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              CustomRangeInput(),
-              CustomRangeInput(),
-              CustomRangeInput(),
-              CustomRangeInput(),
-              CustomRangeInput(),
+              CustomRangeInput(
+                title: 'Coast',
+              ),
+              CustomRangeInput(
+                title: 'Look',
+              ),
+              CustomRangeInput(
+                title: 'Needle',
+              ),
+              CustomRangeInput(
+                title: 'Touch expiriance',
+              ),
+              CustomRangeInput(
+                title: 'Usability',
+              ),
               MenuButton(
                 title: 'Calculate',
                 callback: _saveCallback,

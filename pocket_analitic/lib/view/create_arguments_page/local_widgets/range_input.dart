@@ -3,7 +3,11 @@ import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 
 class CustomRangeInput extends StatefulWidget {
-  const CustomRangeInput({super.key});
+  final String title;
+  const CustomRangeInput({
+    super.key,
+    this.title = '',
+  });
 
   @override
   State<CustomRangeInput> createState() => _CustomRangeInputState();
@@ -35,8 +39,8 @@ class _CustomRangeInputState extends State<CustomRangeInput> {
                       margin: const EdgeInsets.only(left: 20),
                       alignment: Alignment.bottomLeft,
                       child: Text(
+                        widget.title,
                         textAlign: TextAlign.start,
-                        'Some atribute',
                         style: CustomTextStyle.title2SemiBold20(
                             c: CustomColors.mainText),
                       ),
