@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
+import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
+import 'package:pocket_analitic/view/arguments_page/create_arguments_page/create_arguments_page.dart';
+import 'package:pocket_analitic/view/arguments_page/my_arguments_page/my_arguments_page.dart';
 
 class ArgumentsPage extends StatefulWidget {
   const ArgumentsPage({super.key});
@@ -20,33 +23,58 @@ class _ArgumentsPagePageState extends State<ArgumentsPage>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: <Widget>[
-          Container(
-              height: 32,
-              child: TabBar(
-                  labelStyle: CustomTextStyle.headlineSemiBold16(),
-                  labelColor: Colors.white,
-                  unselectedLabelColor: Colors.black,
-                  indicator: const BoxDecoration(
-                    color: CustomColors.uiTheme,
-                  ),
-                  controller: _controller,
-                  tabs: const [
-                    Tab(
-                      child: Text('My collection'),
+    return Scaffold(
+      backgroundColor: CustomColors.bg,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: CustomColors.uiTheme,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomIconButton(
+              callback: () {
+                Navigator.pop(context);
+              },
+              icon: 'assets/icons/back-arrow.svg',
+            ),
+            Text('Arguments',
+                style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
+            CustomIconButton(
+              callback: () {},
+              icon: 'assets/icons/icons8-info-50.svg',
+            ),
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+                height: 50,
+                child: TabBar(
+                    labelStyle: CustomTextStyle.title2SemiBold20(),
+                    labelColor: CustomColors.bg,
+                    unselectedLabelColor: CustomColors.mainText,
+                    indicator: const BoxDecoration(
+                      color: CustomColors.uiTheme,
                     ),
-                    Tab(child: Text('Create new')),
-                  ])),
-          Expanded(
-            flex: 9,
-            child: TabBarView(controller: _controller, children: const <Widget>[
-              ArgumentsPage(),
-              ArgumentsPage(),
-            ]),
-          ),
-        ],
+                    controller: _controller,
+                    tabs: const [
+                      Tab(
+                        child: Text('My collection'),
+                      ),
+                      Tab(child: Text('Add argument')),
+                    ])),
+            Expanded(
+              flex: 9,
+              child:
+                  TabBarView(controller: _controller, children: const <Widget>[
+                MyArgumentsPage(),
+                CreateArgumentsPage(),
+              ]),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_analitic/theme/custom_colors.dart';
-import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/theme/text_variables.dart';
-import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
 import 'package:pocket_analitic/view/UI/slider/range_input.dart';
 import 'package:pocket_analitic/view/UI/text_input/custom_text_input.dart';
@@ -36,54 +33,30 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: CustomColors.bg,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: CustomColors.uiTheme,
-        title: Row(
+    return SafeArea(
+      child: Container(
+        margin: const EdgeInsets.all(15),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomIconButton(
-              callback: () {
-                Navigator.pop(context);
-              },
-              icon: 'assets/icons/back-arrow.svg',
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CustomTextInput(
+                    hintText: TextVariables.typeArgumentName,
+                    callback: _setArgumentName),
+                CustomRangeInput(
+                  callback: () {},
+                  title: TextVariables.howImportant,
+                ),
+              ],
             ),
-            Text('Arguments',
-                style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
-            CustomIconButton(
-              callback: () {},
-              icon: 'assets/icons/icons8-info-50.svg',
+            MenuButton(
+              title: TextVariables.save,
+              callback: _saveCallback,
             ),
           ],
-        ),
-      ),
-      body: SafeArea(
-        child: Container(
-          margin: const EdgeInsets.all(15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomTextInput(
-                      hintText: TextVariables.typeArgumentName,
-                      callback: _setArgumentName),
-                  CustomRangeInput(
-                    callback: () {},
-                    title: TextVariables.howImportant,
-                  ),
-                ],
-              ),
-              MenuButton(
-                title: TextVariables.save,
-                callback: _saveCallback,
-              ),
-            ],
-          ),
         ),
       ),
     );
