@@ -46,24 +46,29 @@ class _ChoiserPageState extends State<ChoiserPage> {
       ),
       body: SafeArea(
         child: Container(
+          padding: const EdgeInsets.only(top: 8),
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomRangeInput(
-                title: 'Coast',
-              ),
-              CustomRangeInput(
-                title: 'Look',
-              ),
-              CustomRangeInput(
-                title: 'Needle',
-              ),
-              CustomRangeInput(
-                title: 'Touch expiriance',
-              ),
-              CustomRangeInput(
-                title: 'Usability',
+              Column(
+                children: const [
+                  CustomRangeInput(
+                    title: 'Coast',
+                  ),
+                  CustomRangeInput(
+                    title: 'Look',
+                  ),
+                  CustomRangeInput(
+                    title: 'Needle',
+                  ),
+                  CustomRangeInput(
+                    title: 'Touch expiriance',
+                  ),
+                  CustomRangeInput(
+                    title: 'Usability',
+                  ),
+                ],
               ),
               MenuButton(
                 title: 'Calculate',
