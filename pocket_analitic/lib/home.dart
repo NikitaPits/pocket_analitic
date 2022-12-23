@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/theme/text_variables.dart';
@@ -59,11 +60,17 @@ class _HomeState extends State<Home> {
                 ],
               ),
               Container(
-                height: 300,
-                width: 300,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/logo.png')),
+                height: 250,
+                width: 250,
+                padding: const EdgeInsets.all(12),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: CustomColors.uiTheme,
+                  borderRadius: BorderRadius.circular(125),
+                ),
+                child: SvgPicture.asset(
+                  'assets/icons/logo-AI1.svg',
+                  color: CustomColors.bg,
                 ),
               ),
               const HomeMenuButtons(),

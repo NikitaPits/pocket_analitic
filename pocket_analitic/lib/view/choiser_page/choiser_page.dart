@@ -54,7 +54,7 @@ class _ChoiserPageState extends State<ChoiserPage> {
               Column(
                 children: const [
                   CustomRangeInput(
-                    title: 'Coast',
+                    title: 'Cost',
                   ),
                   CustomRangeInput(
                     title: 'Look',

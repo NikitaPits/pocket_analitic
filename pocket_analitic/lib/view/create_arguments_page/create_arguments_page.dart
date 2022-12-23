@@ -42,7 +42,7 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
               },
               icon: 'assets/icons/back-arrow.svg',
             ),
-            Text('Creaate Arguments',
+            Text('Create Arguments',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
             CustomIconButton(
               callback: () {},
