@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
+import 'package:pocket_analitic/theme/text_variables.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
-import 'package:pocket_analitic/view/create_arguments_page/local_widgets.dart/name_input.dart';
+import 'package:pocket_analitic/view/UI/slider/range_input.dart';
+import 'package:pocket_analitic/view/UI/text_input/custom_text_input.dart';
 
 class CreateArgumentsPage extends StatefulWidget {
   const CreateArgumentsPage({super.key});
@@ -48,7 +50,7 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
               },
               icon: 'assets/icons/back-arrow.svg',
             ),
-            Text('Create Arguments',
+            Text('Arguments',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),
             CustomIconButton(
               callback: () {},
@@ -61,12 +63,23 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
         child: Container(
           margin: const EdgeInsets.all(15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ArgumentNameInput(callback: _setArgumentName),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomTextInput(
+                      hintText: TextVariables.typeArgumentName,
+                      callback: _setArgumentName),
+                  CustomRangeInput(
+                    callback: () {},
+                    title: TextVariables.howImportant,
+                  ),
+                ],
+              ),
               MenuButton(
-                title: 'Save',
+                title: TextVariables.save,
                 callback: _saveCallback,
               ),
             ],

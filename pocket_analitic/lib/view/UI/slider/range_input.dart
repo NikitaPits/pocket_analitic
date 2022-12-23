@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
+import 'package:pocket_analitic/view/UI/slider/custom_track_shape.dart';
 
 class CustomRangeInput extends StatefulWidget {
   final String title;
+  final Function callback;
   const CustomRangeInput({
     super.key,
     this.title = '',
+    required this.callback,
   });
 
   @override
@@ -17,7 +20,7 @@ class _CustomRangeInputState extends State<CustomRangeInput> {
   late double _sliderValue;
   @override
   void initState() {
-    _sliderValue = 0;
+    _sliderValue = 1;
     super.initState();
   }
 
@@ -28,6 +31,7 @@ class _CustomRangeInputState extends State<CustomRangeInput> {
       child: Column(
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
@@ -36,7 +40,6 @@ class _CustomRangeInputState extends State<CustomRangeInput> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(left: 20),
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         widget.title,
@@ -45,16 +48,22 @@ class _CustomRangeInputState extends State<CustomRangeInput> {
                             c: CustomColors.mainText),
                       ),
                     ),
-                    Slider(
-                      value: _sliderValue,
-                      activeColor: CustomColors.mainText,
-                      inactiveColor: CustomColors.vivaMagenta,
-                      onChanged: (value) {
-                        setState(() {
-                          _sliderValue = value;
-                        });
-                      },
-                      max: 10,
+                    SliderTheme(
+                      data: SliderThemeData(
+                        trackShape: CustomTrackShape(),
+                      ),
+                      child: Slider(
+                        value: _sliderValue,
+                        activeColor: CustomColors.mainText,
+                        inactiveColor: CustomColors.vivaMagenta,
+                        onChanged: (value) {
+                          setState(() {
+                            _sliderValue = value;
+                          });
+                        },
+                        min: 1,
+                        max: 10,
+                      ),
                     ),
                   ],
                 ),

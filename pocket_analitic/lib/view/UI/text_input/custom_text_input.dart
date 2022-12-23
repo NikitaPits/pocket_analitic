@@ -3,18 +3,17 @@ import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 
-class ArgumentNameInput extends StatefulWidget {
+class CustomTextInput extends StatefulWidget {
   final Function callback;
-  const ArgumentNameInput({
-    super.key,
-    required this.callback,
-  });
+  final String hintText;
+  const CustomTextInput(
+      {super.key, required this.callback, this.hintText = 'Type here...'});
 
   @override
-  State<ArgumentNameInput> createState() => _ArgumentNameInputState();
+  State<CustomTextInput> createState() => _CustomTextInputState();
 }
 
-class _ArgumentNameInputState extends State<ArgumentNameInput> {
+class _CustomTextInputState extends State<CustomTextInput> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,13 +25,13 @@ class _ArgumentNameInputState extends State<ArgumentNameInput> {
             onChanged: (value) {
               widget.callback(value);
             },
-            style: CustomTextStyle.headlineMedium16(
+            style: CustomTextStyle.title2SemiBold20(
               c: CustomColors.mainText,
             ),
             cursorColor: CustomColors.uiTheme,
             decoration: InputDecoration(
-              hintText: 'Enter an argument name',
-              hintStyle: CustomTextStyle.headlineMedium16(
+              hintText: widget.hintText,
+              hintStyle: CustomTextStyle.title2SemiBold20(
                 c: CustomColors.hintText,
               ),
               focusedBorder: const UnderlineInputBorder(
@@ -44,7 +43,7 @@ class _ArgumentNameInputState extends State<ArgumentNameInput> {
         CustomIconButton(
           icon: 'assets/icons/icons8-info-50.svg',
           callback: () async {},
-        )
+        ),
       ],
     );
   }

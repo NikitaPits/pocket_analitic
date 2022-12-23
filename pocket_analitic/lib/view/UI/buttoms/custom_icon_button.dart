@@ -5,8 +5,13 @@ import 'package:pocket_analitic/theme/custom_colors.dart';
 class CustomIconButton extends StatefulWidget {
   final String icon;
   final Function callback;
-  const CustomIconButton(
-      {super.key, required this.icon, required this.callback});
+  final double size;
+  const CustomIconButton({
+    super.key,
+    required this.icon,
+    required this.callback,
+    this.size = 30,
+  });
 
   @override
   State<CustomIconButton> createState() => _CustomIconButtonState();
@@ -20,8 +25,8 @@ class _CustomIconButtonState extends State<CustomIconButton> {
       child: SvgPicture.asset(
         widget.icon,
         color: CustomColors.mainText,
-        height: 30,
-        width: 30,
+        height: widget.size,
+        width: widget.size,
       ),
     );
   }
