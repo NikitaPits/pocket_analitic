@@ -3,7 +3,7 @@ import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
-import 'package:pocket_analitic/view/create_arguments_page/local_widgets/range_input.dart';
+import 'package:pocket_analitic/view/choiser_page/local_widgets/range_input.dart';
 import 'package:pocket_analitic/view/result_of_choise/result_of_choise_page.dart';
 
 class ChoiserPage extends StatefulWidget {

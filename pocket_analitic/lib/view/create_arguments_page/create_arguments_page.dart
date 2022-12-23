@@ -3,6 +3,7 @@ import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CreateArgumentsPage extends StatefulWidget {
   const CreateArgumentsPage({super.key});
@@ -17,8 +18,10 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
   }
 
   late String _createdArgumentName;
+  late List<String> createdArgumets;
   @override
   void initState() {
+    createdArgumets = [];
     _createdArgumentName = '';
     super.initState();
   }
@@ -83,7 +86,12 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
                     ),
                   ),
                   CustomIconButton(
-                      icon: 'assets/icons/plus.svg', callback: () {})
+                    icon: 'assets/icons/plus.svg',
+                    callback: () async {
+                      final prefs = await SharedPreferences.getInstance();
+                      prefs.setStringList('', [_createdArgumentName]);
+                    },
+                  )
                 ],
               ),
               MenuButton(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
+import 'package:pocket_analitic/theme/text_variables.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/home_page_widgets/home_manu_buttons.dart';
 
@@ -46,11 +47,11 @@ class _HomeState extends State<Home> {
             children: [
               Column(
                 children: [
-                  Text('Welcome!',
+                  Text(TextVariables.welcome,
                       style: CustomTextStyle.title1Bold24(
                           c: CustomColors.mainText)),
                   Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                    TextVariables.mainPageText,
                     textAlign: TextAlign.justify,
                     style: CustomTextStyle.caption1Regular13(
                         c: CustomColors.mainText),
