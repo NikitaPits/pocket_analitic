@@ -3,7 +3,7 @@ import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 import 'package:pocket_analitic/view/UI/buttoms/menu_button.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:pocket_analitic/view/create_arguments_page/local_widgets.dart/name_input.dart';
 
 class CreateArgumentsPage extends StatefulWidget {
   const CreateArgumentsPage({super.key});
@@ -24,6 +24,12 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
     createdArgumets = [];
     _createdArgumentName = '';
     super.initState();
+  }
+
+  _setArgumentName(value) {
+    setState(() {
+      _createdArgumentName = value;
+    });
   }
 
   @override
@@ -58,43 +64,7 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    child: TextField(
-                      onChanged: (value) {
-                        setState(() {
-                          _createdArgumentName = value;
-                        });
-                      },
-                      style: CustomTextStyle.headlineMedium16(
-                        c: CustomColors.mainText,
-                      ),
-                      cursorColor: CustomColors.uiTheme,
-                      decoration: InputDecoration(
-                        hintText: 'Enter an argument name',
-                        hintStyle: CustomTextStyle.headlineMedium16(
-                          c: CustomColors.hintText,
-                        ),
-                        focusedBorder: const UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: CustomColors.uiTheme, width: 2),
-                        ),
-                      ),
-                    ),
-                  ),
-                  CustomIconButton(
-                    icon: 'assets/icons/plus.svg',
-                    callback: () async {
-                      final prefs = await SharedPreferences.getInstance();
-                      prefs.setStringList(
-                          'argument_list', [_createdArgumentName]);
-                    },
-                  )
-                ],
-              ),
+              ArgumentNameInput(callback: _setArgumentName),
               MenuButton(
                 title: 'Save',
                 callback: _saveCallback,
