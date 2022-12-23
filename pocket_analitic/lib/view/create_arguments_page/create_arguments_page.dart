@@ -89,7 +89,8 @@ class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
                     icon: 'assets/icons/plus.svg',
                     callback: () async {
                       final prefs = await SharedPreferences.getInstance();
-                      prefs.setStringList('', [_createdArgumentName]);
+                      prefs.setStringList(
+                          'argument_list', [_createdArgumentName]);
                     },
                   )
                 ],
