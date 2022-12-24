@@ -49,14 +49,15 @@ class _ArgumentsPagePageState extends State<ArgumentsPage>
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            SizedBox(
+            Container(
+                color: CustomColors.uiTheme,
                 height: 50,
                 child: TabBar(
                     labelStyle: CustomTextStyle.title2SemiBold20(),
-                    labelColor: CustomColors.bg,
-                    unselectedLabelColor: CustomColors.mainText,
+                    labelColor: CustomColors.mainText,
+                    unselectedLabelColor: CustomColors.bg,
                     indicator: const BoxDecoration(
-                      color: CustomColors.uiTheme,
+                      color: CustomColors.bg,
                     ),
                     controller: _controller,
                     tabs: const [
