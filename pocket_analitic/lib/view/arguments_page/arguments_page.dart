@@ -28,6 +28,7 @@ class _ArgumentsPagePageState extends State<ArgumentsPage>
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: CustomColors.uiTheme,
+        elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -51,12 +52,14 @@ class _ArgumentsPagePageState extends State<ArgumentsPage>
           children: <Widget>[
             Container(
                 color: CustomColors.uiTheme,
+                padding: const EdgeInsets.only(bottom: 5, left: 8, right: 8),
                 height: 50,
                 child: TabBar(
                     labelStyle: CustomTextStyle.title2SemiBold20(),
                     labelColor: CustomColors.mainText,
                     unselectedLabelColor: CustomColors.bg,
-                    indicator: const BoxDecoration(
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                       color: CustomColors.bg,
                     ),
                     controller: _controller,
