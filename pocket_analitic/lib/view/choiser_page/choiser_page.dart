@@ -15,7 +15,7 @@ class ChoiserPage extends StatefulWidget {
 
 class _ChoiserPageState extends State<ChoiserPage> {
   _saveCallback() {
-    Navigator.pushReplacement(
+    Navigator.push(
         context, MaterialPageRoute(builder: (context) => const ResultsPage()));
   }
 
@@ -29,11 +29,14 @@ class _ChoiserPageState extends State<ChoiserPage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomIconButton(
-              callback: () {
-                Navigator.pop(context);
-              },
-              icon: 'assets/icons/back-arrow.svg',
+            // CustomIconButton(
+            //   callback: () {
+            //     Navigator.pop(context);
+            //   },
+            //   icon: 'assets/icons/back-arrow.svg',
+            // ),
+            const SizedBox(
+              width: 30,
             ),
             Text('Lets Calculate',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),

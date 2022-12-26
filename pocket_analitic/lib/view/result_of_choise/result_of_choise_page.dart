@@ -26,11 +26,14 @@ class _ResultsPageState extends State<ResultsPage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CustomIconButton(
-              callback: () {
-                Navigator.pop(context);
-              },
-              icon: 'assets/icons/back-arrow.svg',
+            // CustomIconButton(
+            //   callback: () {
+            //     Navigator.pop(context);
+            //   },
+            //   icon: 'assets/icons/back-arrow.svg',
+            // ),
+            const SizedBox(
+              width: 30,
             ),
             Text('Results',
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg)),

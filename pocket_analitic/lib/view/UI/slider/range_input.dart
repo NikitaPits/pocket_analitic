@@ -75,7 +75,7 @@ class _CustomRangeInputState extends State<CustomRangeInput> {
                 decoration: BoxDecoration(
                     color: CustomColors.uiTheme,
                     borderRadius: BorderRadius.circular(5),
-                    border: Border.all(color: CustomColors.contures)),
+                    border: Border.all(width: 2, color: CustomColors.contures)),
                 child: Text(
                   _sliderValue.round().toString(),
                   style: CustomTextStyle.title2ExtraBold20(

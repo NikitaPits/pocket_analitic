@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pocket_analitic/theme/custom_colors.dart';
 import 'package:pocket_analitic/theme/custom_fonts.dart';
+import 'package:pocket_analitic/theme/custom_icons.dart';
 import 'package:pocket_analitic/theme/text_variables.dart';
 import 'package:pocket_analitic/view/UI/buttoms/custom_icon_button.dart';
 
@@ -27,13 +28,13 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             Center(
               child: Text(
-                'Pocket Analitic',
+                TextVariables.pocketAnalitic,
                 style: CustomTextStyle.title1ExtraBold24(c: CustomColors.bg),
               ),
             ),
             CustomIconButton(
               callback: () {},
-              icon: 'assets/icons/icons8-info-50.svg',
+              icon: CustomIcons.info,
             ),
           ],
         ),
@@ -43,7 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Column(
                 children: [
@@ -59,6 +60,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ],
               ),
               Container(
+                margin: const EdgeInsets.only(top: 50),
                 height: 250,
                 width: 250,
                 padding: const EdgeInsets.all(12),
@@ -66,9 +68,13 @@ class _WelcomePageState extends State<WelcomePage> {
                 decoration: BoxDecoration(
                   color: CustomColors.uiTheme,
                   borderRadius: BorderRadius.circular(125),
+                  border: Border.all(
+                    width: 2,
+                    color: CustomColors.contures,
+                  ),
                 ),
                 child: SvgPicture.asset(
-                  'assets/icons/logo-AI1.svg',
+                  CustomIcons.logo,
                   color: CustomColors.bg,
                 ),
               ),

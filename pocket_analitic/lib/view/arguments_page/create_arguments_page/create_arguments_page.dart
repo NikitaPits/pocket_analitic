@@ -12,9 +12,7 @@ class CreateArgumentsPage extends StatefulWidget {
 }
 
 class _CreateArgumentsPageState extends State<CreateArgumentsPage> {
-  _saveCallback() {
-    Navigator.pop(context);
-  }
+  _saveCallback() {}
 
   late String _createdArgumentName;
   late List<String> createdArgumets;

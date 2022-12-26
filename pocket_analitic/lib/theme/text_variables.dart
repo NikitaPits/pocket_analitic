@@ -5,4 +5,5 @@ class TextVariables {
   static const String save = 'Save';
   static const String welcome = 'Welcome';
   static const String typeArgumentName = 'Type argument name here';
+  static const String pocketAnalitic = 'Pocket Analitic';
 }

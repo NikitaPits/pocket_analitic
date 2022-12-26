@@ -23,7 +23,7 @@ class _MenuButtonState extends State<MenuButton> {
           color: CustomColors.uiTheme,
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           border: Border.all(
-            width: 1,
+            width: 2,
             color: CustomColors.contures,
           ),
         ),
